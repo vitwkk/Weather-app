@@ -9,7 +9,7 @@ result = requests.get(url_local_weather)
 #initializing BeautifulSoup
 doc = BeautifulSoup(result.text, "html.parser")
 
-#Getting all elements with "°C"
+#Getting all elements with "°C", these elements also contain day name
 degrees = doc.find_all(string="°C")
 
 
