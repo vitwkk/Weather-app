@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import matplotlib.pyplot as plt
 
 #Load html file from website
 url_local_weather = "https://pocasi.seznam.cz/brno"
@@ -24,6 +25,18 @@ def daygrees(index):
     day = degrees_day.find("div")
     day_txt = day.text
     print(f"{day_txt.capitalize()} bude {strong_day_dg.text}")
+
+
+
+x = [1,2,3]
+y = [2,4,1]
+plt.plot(x, y)
+plt.xlabel('x - axis')
+plt.ylabel('y - axis')
+plt.title('My first graph!')
+plt.show()
+
+
 
 #for loop that loops through valid indexes so we get degrees for the next 6 days
 for i in range(15):
