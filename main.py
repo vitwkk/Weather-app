@@ -25,24 +25,27 @@ def daygrees(index):
     day = degrees_day.find("div")
     day_txt = day.text
     print(f"{day_txt.capitalize()} bude {strong_day_dg.text}")
+    return strong_day_dg, day
 
 
 
 
 
-
-
+x = []
+y = []
 #for loop that loops through valid indexes so we get degrees for the next 6 days
 for i in range(15):
     if i % 2 == 1:
         if i != 1:
-            daygrees(i)
+            day_dg, day_name = daygrees(i)
+            y.append(day_dg.text)
+            x.append(day_name.text)
 
-x = [1,2,3]
-y = [2,4,1]
+
+
 plt.plot(x, y)
-plt.xlabel('stupně')
-plt.ylabel('dny')
+plt.xlabel('dny')
+plt.ylabel('stupně')
 plt.title('Počasí - dny a teploty')
 plt.show()
 
